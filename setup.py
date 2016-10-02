@@ -26,7 +26,7 @@ class PyTest(Command):
 
 setuptools.setup(
     name="notebookism-chicago",
-    version="0.1.3",
+    version="0.2.1",
     author="Tony Fast",
     author_email="tony.fast@continuum.io",
     description="",
