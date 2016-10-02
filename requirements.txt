@@ -2,3 +2,6 @@ whatever-forever
 sklearn
 pandas
 scipy
+requests
+envoy
+ipywidgets

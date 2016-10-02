@@ -48,7 +48,8 @@ setuptools.setup(
         "Topic :: Software Development :: Testing",
     ],
     install_requires=[
-        "sklearn", "pandas", "whatever-forever",
+        "envoy", "ipywidgets", "requests",
+        "jinja2", "sklearn", "pandas", "whatever-forever",
     ],
     setup_requires=[
         'pytest-runner'
