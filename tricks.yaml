@@ -1,0 +1,59 @@
+# From root:
+#
+# watchmedo tricks tricks.yaml
+
+tricks:
+# Compile the script and rerun tests.
+- watchdog.tricks.ShellCommandTrick:
+    patterns:
+    - "*/notebookism/*.ipynb"
+    ignore_patterns:
+        - '*/.~*.ipynb'
+        - '*/.ipynb_checkpoints*'
+    shell_command: |
+        jupyter nbconvert --to html ${watch_src_path} --template=docs/_nbconvert/body.html --output-dir=docs/source/
+        jupyter nbconvert --to python "${watch_src_path}"  --template=docs/_nbconvert/python.tpl
+        autopep8 --recursive --in-place --verbose . &&
+        python sweet_tests.py &&
+        python setup.py test
+
+
+# Only test the test
+- watchdog.tricks.ShellCommandTrick:
+    patterns:
+    - "*/docs/*.ipynb"
+    - "*/docs/**/*.ipynb"
+    ignore_patterns:
+    - '*/.~*.ipynb'
+    - '*/.ipynb_checkpoints*'
+    # append yaml front matter and liquid tags for jekyll to compile
+    # test the file that changes.  every piece of code should be tested in the
+    # jekyll site.
+    shell_command: |
+        py.test ${watch_src_path} &&
+        jupyter nbconvert --to html ${watch_src_path} --template=docs/_nbconvert/body.html
+
+- watchdog.tricks.ShellCommandTrick:
+    patterns:
+    - "*/tests/*.ipynb"
+    ignore_patterns:
+    - '*/.~*.ipynb'
+    - '*/.ipynb_checkpoints*'
+    shell_command: |
+        py.test ${watch_src_path} &&
+        jupyter nbconvert --to html ${watch_src_path} --template=docs/_nbconvert/body.html &&
+        mv tests/*.html docs/tests/
+
+- watchdog.tricks.ShellCommandTrick:
+    patterns:
+    - "*/docs/test-readme.ipynb"
+    shell_command: |
+        py.test ${watch_src_path} &&
+        jupyter nbconvert --to rst ${watch_src_path} --output=../readme.rst &&
+        jupyter nbconvert --to markdown ${watch_src_path} --output=../readme.md
+
+- watchdog.tricks.ShellCommandTrick:
+    patterns:
+    - "*/docs/index.ipynb"
+    shell_command: |
+        jupyter nbconvert --to html ${watch_src_path} --output=index.html --template=docs/_nbconvert/body.html

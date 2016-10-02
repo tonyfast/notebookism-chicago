@@ -5,3 +5,12 @@ install:
 - python setup.py install
 script:
 - python setup.py test
+deploy:
+  provider: pypi
+  user: tonyfast
+  password:
+    secure: JEImPnOR82vzKY9UQ0I+0bdLCnfAPi6+4c4rt0iq02UhOGO0rZtiyZXNuCfiMQYbRsb2A7m5pi1NyjcFSvRNnyDu/lP3FQKM3L5F0qgJS3W33LZaFVwiZAJp5jFXxoTTrFw3njDPNR3dWintOt/pZXgvyGbb9Dst9/GHApm+kpzva8TkVzgOYLKSRbwybc2kDvhwntW7PSUG4JrUV0CXFxbxQWJBE/lnGRvqCcw7E2rz++3gV+kIXt4aYO85ymYCx1lvvIQizdaQSvxwnln6zukxv+EpLm/4fW/uDLug6D5N2Ye16SpxUxig1dJCr0dltYFGFzjZ0jRy8cGiFoJCnKPZA82N42al27DLxyzZFHN1UTsX7ooJrKZPoxJE5qIkaCgjJrX6Nvqx9WlLg0tHJnOg3M1tu2B3fyn2nCCrPPfgTTKvfidPzNrA4Zd31JyHcHB11VHZePE/mxJ00nQIOOkrS7e+yFHjfCNT2t7Ww0beqETcX/Z5bBnQRcfiZ7TrgxCgL9e1x4Pgb2AE3O0hF5PXyvyG6iuAp0YumLdM83Ps89fAlQ+tOHVasItz5hGLoLU9suFSVdVjPIvBHqz5BDXSx49D0eZbLKCe4MRhijqvzWKm7YjuVQ9ts3XHZY3eSXFT5sP7d6kLWHEWvomC+BHbBtOhTvax/hetcrPeqlM=
+  on:
+    tags: true
+    distributions: sdist bdist_wheel
+    repo: tonyfast/notebookism-chicago
