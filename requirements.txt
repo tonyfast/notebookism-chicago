@@ -1,5 +1,6 @@
 whatever-forever
 sklearn
+cython
 pandas
 scipy
 requests

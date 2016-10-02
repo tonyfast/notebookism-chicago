@@ -48,7 +48,7 @@ setuptools.setup(
         "Topic :: Software Development :: Testing",
     ],
     install_requires=[
-        "envoy", "ipywidgets", "requests",
+        "envoy", "ipywidgets", "requests", "cython",
         "jinja2", "sklearn", "pandas", "whatever-forever",
     ],
     setup_requires=[
