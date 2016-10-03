@@ -1,3 +1,4 @@
+lxml
 whatever-forever
 sklearn
 cython
