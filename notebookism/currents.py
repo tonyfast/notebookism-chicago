@@ -51,50 +51,50 @@ if __name__ is '__main__':
     import this
 
 
-# In[35]:
+# In[3]:
 
 get_ipython().run_cell_magic('display', 'HTML _',
                              '<iframe src="//www.slideshare.net/slideshow/embed_code/key/Mss7FQdY74pJvO?startSlide=3" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/doughellmann/an-introduction-to-the-zen-of-python" title="An Introduction to the Zen of Python" target="_blank">An Introduction to the Zen of Python</a> </strong> from <strong><a href="//www.slideshare.net/doughellmann" target="_blank">doughellmann</a></strong> </div>\n\n<hr/>\n<div class="row"><a href="{{refs[\'pep8\']}}">Pep 8</a></div>')
 
 
-# In[24]:
+# In[4]:
 
 # this??
 
 
-# In[7]:
+# In[5]:
 
 iframe(refs['torus'])
 
 
-# In[8]:
+# In[6]:
 
 get_ipython().run_cell_magic('display', 'Markdown _',
                              '{{pandas.read_html(\n    "<table>%s</table>" % \n    requests.get(refs[\'kernels\']).text.split(\'<table>\')[1].split(\'</table>\')[0]\n)[0].to_html()}}')
 
 
-# In[9]:
+# In[7]:
 
 # Model-View-Controller wiki
 display.Image(refs['mvc'])
 
 
-# In[10]:
+# In[8]:
 
 display.Image(refs['workflow'])
 
 
-# In[ ]:
+# In[9]:
 
 iframe(refs['typography'])
 
 
-# In[11]:
+# In[10]:
 
 iframe(refs['pn_styleguide'])
 
 
-# In[12]:
+# In[11]:
 
 iframe(refs['fp_literate'])
 
@@ -110,7 +110,7 @@ iframe(refs['fp_literate'])
 #
 # The `kernel` talks to client.
 
-# In[13]:
+# In[12]:
 
 # Kernel
 ip = get_ipython()
@@ -120,7 +120,7 @@ ip.user_ns.keys()
 
 # # Create a line magic
 
-# In[14]:
+# In[13]:
 
 ip.register_magic_function(
     __x()[str.strip][requests.get].__,
@@ -128,12 +128,12 @@ ip.register_magic_function(
 )
 
 
-# In[30]:
+# In[14]:
 
 # %request_no_cache https://api.github.com/repos/nteract/nteract
 
 
-# In[27]:
+# In[15]:
 
 # if __name__ is '__main__' and _:
 #     _.headers['X-RateLimit-Remaining']
@@ -146,7 +146,7 @@ ip.register_magic_function(
 # * Sometimes accessing data has a cost, or limit.
 # * _Keep your focus on the notebook._
 
-# In[25]:
+# In[16]:
 
 @memoize
 def get_(url, *args):
@@ -162,12 +162,12 @@ ip.register_magic_function(
 )
 
 
-# In[18]:
+# In[17]:
 
 # %request https://api.github.com/repos/nteract/nteract
 
 
-# In[19]:
+# In[18]:
 
 # __x(get_.__closure__).first[_this().cell_contents._].__()[
 #     ('https://api.github.com/repos/nteract/nteract',)
@@ -176,23 +176,24 @@ ip.register_magic_function(
 
 # # Parallelism
 
+# In[19]:
+
+get_ipython().run_cell_magic('display', 'HTML _',
+                             '<script async class="speakerdeck-embed" data-slide="4" data-id="983b21f06a070130c77d22000a91bfda" data-ratio="1.2994923857868" src="//speakerdeck.com/assets/embed.js"></script>')
+
+
 # In[20]:
-
-get_ipython().run_cell_magic('html', '', '<script async class="speakerdeck-embed" data-slide="4" data-id="983b21f06a070130c77d22000a91bfda" data-ratio="1.2994923857868" src="//speakerdeck.com/assets/embed.js"></script>')
-
-
-# In[21]:
 
 get_ipython().run_cell_magic('display', 'Markdown _',
                              "# A simple joblib example\n\n[Saving time with embarassingly parallel loops.]({{refs['tf_parallel']}})")
 
 
-# In[33]:
+# In[21]:
 
 iframe(refs['dask_overview'])
 
 
-# In[32]:
+# In[22]:
 
 get_ipython().run_cell_magic('display', 'Markdown _',
                              "# Functional Programming\n\nRecently, I started using functional programming approaches.  Functional programming reduces the cognitive load of name.  Write less to do more.\n\n> [My suspicion is that non-CS major programmers value understandability and \nfewer errors, over fewer keystrokes and more power.]({{refs['mg_functional']}})\n\n\n* [toolz]({{refs['toolz']}})\n* [whatever-forever]({{refs['wf']}})\n* {{refs['dm_functional']}}")
@@ -213,5 +214,3 @@ get_ipython().run_cell_magic('display', 'Markdown _',
 #     * compartmentalize code & non-code cells
 #
 # * Automate redundant interactions: testing, deployment, documentation...
-
-# In[ ]:

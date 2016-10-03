@@ -6,7 +6,7 @@
 #
 # The notebook, my machine, and its many artifacts.
 
-# In[5]:
+# In[1]:
 
 if __name__ is '__main__':
     from notebookism import env, iframe, refs, get_
@@ -27,19 +27,19 @@ import time
 from IPython import get_ipython, display
 
 
-# In[6]:
+# In[2]:
 
 iframe(refs['workflow'])
 
 
-# In[5]:
+# In[3]:
 
 iframe(refs['format'])
 
 
 # # Sharing is caring
 
-# In[13]:
+# In[ ]:
 
 get_ipython().run_cell_magic('display', 'Markdown',
                              "## Gist, Nbviewer, Anaconda <small>no kernel</small>\n\n---\n\nSharing static files means that Javascript can be used for interactivity.\n\n* Github santizes javascript\n* `nbviewer` and `anaconda` embrace it.  Static webpages can be applications.\n    * [`anaconda-nb-extensions`]({{refs['nbext']}})\n    \nhttp://nbviewer.jupyter.org/github/tonyfast/notebookism-chicago/tree/master/")
@@ -95,21 +95,21 @@ get_ipython().run_cell_magic('file', 'app.py', 'from flask import Flask\nfrom IP
 # e.kill()
 
 
-# In[11]:
+# In[ ]:
 
 get_ipython().run_cell_magic('script', 'python --bg', 'from flask import Flask\nfrom IPython import get_ipython\napp = Flask(__name__)\n\n@app.route("/")\n@app.route("/<path:path>")\ndef hello(path=""):\n    if path:\n        repo.value = path\n        return (__x(**get_ipython().user_ns)\n                 | repo_template.render\n                 > mistune.markdown\n                )\n    return "Hello New World!" + path\n\nif __name__ == "__main__":\n    app.run(port=5000)')
 
 
-# In[8]:
+# In[ ]:
 
 get_ipython().magic('killbgscripts')
 
 
-# # Conclusion
-#
-# * Notebooks have come to provide the same flexibility as many modern
-# programming.
-# * The workflow is ideal for science, or answering a question to gain insight.
+# In[ ]:
+
+get_ipython().run_cell_magic('display', 'Markdown _',
+                             "\n# Conclusion\n\n* Notebooks have come to provide the same flexibility as many modern programming. \n* The workflow is ideal for science, or answering a question to gain insight.\n\n> These presentations were made with [`nbpresent`]({{refs['nbpresent']}})")
+
 
 # In[ ]:
 

@@ -2,7 +2,7 @@
 ``notebookism``
 ===============
 
-A talk for PyData Chicago
+A talk for the PyData Chicago meetup
 
 Installation
 ------------
@@ -17,12 +17,16 @@ Installation
 Links
 =====
 
--  Binder
--  NbViewer
--  Anaconda.org presentation view
--  bl.ocks
--  Github
--  travis-ci
+-  `Github <https://github.com/tonyfast/notebookism-chicago>`__
+-  `Binder <http://mybinder.org/repo/tonyfast/notebookism-chicago>`__
+-  `NbViewer <http://nbviewer.jupyter.org/github/tonyfast/notebookism-chicago/tree/master/>`__
+-  Anaconda.org
+
+   -  `notebook <https://anaconda.org/tonyfast/test-readme/notebook>`__
+   -  `presentation <https://anaconda.org/tonyfast/test-readme/notebook/format/presentation>`__
+
+-  `travis-ci <https://travis-ci.org/tonyfast/notebookism-chicago>`__
+-  `pypi <https://pypi.python.org/pypi/notebookism-chicago>`__
 
 Development
 ===========
@@ -47,14 +51,10 @@ Running the docs
 
     jekyll serve docs -wit
 
-Docs are hosted at ``http://localhost:4000/whatever-forever/``.
+Docs are hosted at ``http://localhost:4000/notebookism-chicago/``.
 
 License
 -------
 
 ``notebookism`` is released as free software under the `BSD 3-Clause
 license <https://github.com/tonyfast/whatever-forever/blob/master/LICENSE>`__.
-
-.. code:: python
-
-    #hi
