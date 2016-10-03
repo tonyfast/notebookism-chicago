@@ -1,0 +1,398 @@
+---
+layout: base
+---
+
+<body>
+  <div tabindex="-1" id="notebook" class="border-box-sizing">
+    <div class="container" id="notebook-container">
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Putting-it-all-together-Part-3">Putting it all together <small>Part 3</small><a class="anchor-link" href="#Putting-it-all-together-Part-3">&#182;</a></h1><hr>
+<p>The notebook, my machine, and its many artifacts.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">if</span> <span class="n">__name__</span> <span class="ow">is</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">notebookism</span> <span class="k">import</span> <span class="n">env</span><span class="p">,</span> <span class="n">iframe</span><span class="p">,</span> <span class="n">refs</span><span class="p">,</span> <span class="n">get_</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">.utils</span> <span class="k">import</span> <span class="n">env</span><span class="p">,</span> <span class="n">iframe</span><span class="p">,</span> <span class="n">refs</span>
+    <span class="kn">from</span> <span class="nn">.currents</span> <span class="k">import</span> <span class="n">get_</span>
+    
+    
+<span class="kn">from</span> <span class="nn">whatever</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">toolz.curried</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">envoy</span><span class="o">,</span> <span class="nn">ipywidgets</span><span class="o">,</span> <span class="nn">jinja2</span><span class="o">,</span> <span class="nn">mistune</span><span class="o">,</span> <span class="nn">nbconvert</span><span class="o">,</span> <span class="nn">requests</span><span class="o">,</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">IPython</span> <span class="k">import</span> <span class="n">get_ipython</span><span class="p">,</span> <span class="n">display</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>https://anaconda.org/tonyfast/any-time-saves-time/notebook
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">iframe</span><span class="p">(</span><span class="n">refs</span><span class="p">[</span><span class="s1">&#39;workflow&#39;</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[6]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <iframe
+            width="800"
+            height="600"
+            src="https://www.opendatascience.com/wp-content/uploads/2015/12/IPython_Notebook_Workflows.png"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">iframe</span><span class="p">(</span><span class="n">refs</span><span class="p">[</span><span class="s1">&#39;format&#39;</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[5]:</div>
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+
+        <iframe
+            width="800"
+            height="600"
+            src="https://ipython.org/ipython-doc/3/notebook/nbformat.html#nbformat"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Sharing-is-caring">Sharing is caring<a class="anchor-link" href="#Sharing-is-caring">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">display</span> Markdown
+## Gist, Nbviewer, Anaconda &lt;small&gt;no kernel&lt;/small&gt;
+
+---
+
+Sharing static files means that Javascript can be used for interactivity.
+
+* Github santizes javascript
+* `nbviewer` and `anaconda` embrace it.  Static webpages can be applications.
+    * [`anaconda-nb-extensions`]({{refs[&#39;nbext&#39;]}})
+    
+http://nbviewer.jupyter.org/github/tonyfast/notebookism-chicago/tree/master/
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt output_prompt">Out[13]:</div>
+
+<div class="output_markdown rendered_html output_subarea output_execute_result">
+<h2 id="Gist,-Nbviewer,-Anaconda-no-kernel">Gist, Nbviewer, Anaconda <small>no kernel</small><a class="anchor-link" href="#Gist,-Nbviewer,-Anaconda-no-kernel">&#182;</a></h2><hr>
+<p>Sharing static files means that Javascript can be used for interactivity.</p>
+<ul>
+<li>Github santizes javscript, but nbviewer and anaconda embrace it.</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Binder,-Travis-not-my-kernel">Binder, Travis <small>not my kernel</small><a class="anchor-link" href="#Binder,-Travis-not-my-kernel">&#182;</a></h2><ul>
+<li><a href="http://mybinder.org:/repo/tonyfast/notebookism-chicago"><img src="http://mybinder.org/badge.svg" alt="Binder"></a></li>
+<li><a href="https://travis-ci.org/tonyfast/notebookism-chicago"><code>travis-ci</code></a></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="I-am-a-stateful-machine-my-kernel">I am a stateful machine <small>my kernel</small><a class="anchor-link" href="#I-am-a-stateful-machine-my-kernel">&#182;</a></h2><blockquote><p>The work you do locally effects</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="How-do-you-test-notebooks?">How do you test notebooks?<a class="anchor-link" href="#How-do-you-test-notebooks?">&#182;</a></h1><p><a href=""><code>pytest-ipynb</code></a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Applications-and-the-notebook">Applications and the notebook<a class="anchor-link" href="#Applications-and-the-notebook">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">flask</span> <span class="k">import</span> <span class="n">Flask</span>
+<span class="kn">from</span> <span class="nn">IPython</span> <span class="k">import</span> <span class="n">get_ipython</span>
+<span class="n">app</span> <span class="o">=</span> <span class="n">Flask</span><span class="p">(</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">&quot;/&lt;path:path&gt;&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">path</span><span class="p">:</span>
+        <span class="n">repo</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">path</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">__x</span><span class="p">(</span><span class="o">**</span><span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">user_ns</span><span class="p">)</span>
+                 <span class="o">|</span> <span class="n">repo_template</span><span class="o">.</span><span class="n">render</span>
+                 <span class="o">&gt;</span> <span class="n">mistune</span><span class="o">.</span><span class="n">markdown</span>
+                <span class="p">)</span>
+    <span class="k">return</span> <span class="s2">&quot;Hello New World!&quot;</span> <span class="o">+</span> <span class="n">path</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">port</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">file</span> app.py
+from flask import Flask
+from IPython import get_ipython
+app = Flask(__name__)
+
+@app.route(&quot;/&quot;)
+@app.route(&quot;/&lt;path:path&gt;&quot;)
+def hello(path=&quot;&quot;):
+    if path:
+        repo.value = path
+        return (__x(**get_ipython().user_ns)
+                 | repo_template.render
+                 &gt; mistune.markdown
+                )
+    return &quot;Hello New World!&quot; + path
+
+if __name__ == &quot;__main__&quot;:
+    app.run(port=5000)
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># e = envoy.connect(&#39;python app.py&#39;)</span>
+<span class="c1"># requests.get(&#39;http://localhost:5000/testing&#39;).text</span>
+<span class="c1"># e.kill()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%%</span><span class="k">script</span> python --bg
+from flask import Flask
+from IPython import get_ipython
+app = Flask(__name__)
+
+@app.route(&quot;/&quot;)
+@app.route(&quot;/&lt;path:path&gt;&quot;)
+def hello(path=&quot;&quot;):
+    if path:
+        repo.value = path
+        return (__x(**get_ipython().user_ns)
+                 | repo_template.render
+                 &gt; mistune.markdown
+                )
+    return &quot;Hello New World!&quot; + path
+
+if __name__ == &quot;__main__&quot;:
+    app.run(port=5000)
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Starting job # 0 in a separate thread.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">killbgscripts</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>All background processes were killed.
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">&#182;</a></h1><ul>
+<li>Notebooks have come to provide the same flexibility as many modern programming. </li>
+<li>The workflow is ideal for science, or answering a question to gain insight.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># kill -15 $( lsof -i:5000 -t )</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+    </div>
+  </div>
+</body>

@@ -1,13 +1,11 @@
 # coding: utf-8
 
-# In[4]:
-
-from .tiny_app import get_
-__all__ = [
-    'get_'
-]
-
-
 # In[ ]:
 
-get_
+from .utils import env, iframe, refs, toggler
+from .currents import get_  # Initialize magics.
+
+from .utils import env, iframe, refs
+__all__ = [
+    'env', 'get_', 'iframe', 'refs', 'toggler',
+]

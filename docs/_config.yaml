@@ -1,2 +1,2 @@
-baseurl: /notebookism-it
+baseurl: /notebookism-chicago
 exclude: ["*.py", "*.ipynb"]
